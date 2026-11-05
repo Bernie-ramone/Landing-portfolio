@@ -1,0 +1,145 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding-top: 1rem;
+}
+
+.bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.7rem 0.7rem 0.7rem 1.5rem;
+  border-radius: var(--radius-md);
+  background: var(--color-ink);
+  color: var(--color-cream);
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.links {
+  display: flex;
+  gap: clamp(1rem, 2.2vw, 2rem);
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-cream);
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--color-sand);
+}
+
+.link[aria-current="true"] {
+  color: var(--color-rust);
+}
+
+.toggle {
+  display: none;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 1080px) {
+  .bar {
+    gap: 1rem;
+    padding-left: 1rem;
+  }
+
+  .toggle {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-left: auto;
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: var(--color-rust);
+  }
+
+  .burger,
+  .burger::before,
+  .burger::after {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--color-cream);
+    transition:
+      transform 0.25s ease,
+      background-color 0.25s ease;
+  }
+
+  .burger {
+    position: relative;
+  }
+
+  .burger::before,
+  .burger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+
+  .burger::before {
+    top: -6px;
+  }
+
+  .burger::after {
+    top: 6px;
+  }
+
+  .toggle[aria-expanded="true"] .burger {
+    background-color: transparent;
+  }
+
+  .toggle[aria-expanded="true"] .burger::before {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .toggle[aria-expanded="true"] .burger::after {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  .nav {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    background: var(--color-ink);
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0;
+  }
+
+  .link {
+    font-size: var(--text-sm);
+  }
+}

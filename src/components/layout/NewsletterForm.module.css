@@ -1,0 +1,83 @@
+.form {
+  width: 100%;
+  max-width: 280px;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.25rem 0.25rem 0.9rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-cream);
+}
+
+.field:focus-within {
+  outline: 2px solid var(--color-rust-light);
+  outline-offset: 2px;
+}
+
+.field input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--color-ink);
+  font-size: 0.8rem;
+}
+
+.field input::placeholder {
+  color: var(--color-ink-soft);
+}
+
+.field button {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  border-radius: 50%;
+  background: var(--color-rust);
+  color: var(--color-cream);
+  transition: background-color 0.2s ease;
+}
+
+.field button:hover {
+  background: var(--color-rust-dark);
+}
+
+.field button:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.message {
+  min-height: 1.4em;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.success {
+  color: var(--color-sand);
+}
+
+.error {
+  color: #f2a28a;
+}
+
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}

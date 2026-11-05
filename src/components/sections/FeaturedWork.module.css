@@ -1,0 +1,109 @@
+.section {
+  padding-bottom: var(--space-section);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  margin-bottom: 0.9rem;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-ink);
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(0.3) contrast(1.05);
+  transition: scale 0.5s ease;
+}
+
+.thumb::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgb(29 26 22 / 0.35);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  box-shadow: 0 6px 18px rgb(0 0 0 / 0.25);
+  translate: -50% -50%;
+  transition:
+    scale 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.play svg {
+  width: 18px;
+  height: 18px;
+  translate: 1px 0;
+}
+
+.thumb:hover img,
+.thumb:focus-visible img {
+  scale: 1.06;
+}
+
+.thumb:hover::before,
+.thumb:focus-visible::before {
+  opacity: 1;
+}
+
+.thumb:hover .play,
+.thumb:focus-visible .play {
+  scale: 1.12;
+  background: var(--color-rust);
+  color: var(--color-cream);
+}
+
+.title {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.category {
+  font-size: 0.8rem;
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 1080px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

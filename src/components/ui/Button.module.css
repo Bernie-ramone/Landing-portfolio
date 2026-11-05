@@ -1,0 +1,46 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.5rem 0.55rem 0.5rem 1.4rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+  white-space: nowrap;
+}
+
+.button:hover > span:last-child {
+  transform: translateX(3px);
+}
+
+.primary {
+  background: var(--color-rust);
+  color: var(--color-cream);
+}
+
+.primary:hover {
+  background: var(--color-rust-dark);
+}
+
+.secondary {
+  background: var(--color-sand);
+  color: var(--color-ink);
+}
+
+.secondary:hover {
+  background: #f5d3a6;
+}
+
+.ghost {
+  padding-inline: 0;
+  color: var(--color-rust);
+}
+
+.ghost:hover {
+  color: var(--color-rust-dark);
+}

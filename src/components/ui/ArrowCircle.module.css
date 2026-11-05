@@ -1,0 +1,36 @@
+.circle {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: var(--radius-pill);
+  transition: transform 0.2s ease;
+}
+
+.md {
+  width: 2rem;
+  height: 2rem;
+}
+
+.sm {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.sm svg {
+  width: 12px;
+  height: 12px;
+}
+
+.sand {
+  background: var(--color-sand);
+  color: var(--color-ink);
+}
+
+.outline {
+  border: 1.5px solid currentColor;
+}
+
+.light {
+  background: var(--color-cream);
+  color: var(--color-ink);
+}

@@ -1,0 +1,34 @@
+:root {
+  /* Colors, sampled from the mockup */
+  --color-cream: #f6ecdc; /* page background */
+  --color-paper: #fbf3e6; /* light cards */
+  --color-ink: #1d1a16; /* text and dark panels */
+  --color-ink-soft: #57504a; /* secondary text */
+  --color-rust: #c4562a; /* main accent */
+  --color-rust-dark: #a8461f; /* accent hover */
+  --color-sand: #f0c48c; /* light accent ("Let's work together") */
+  --color-olive: #66663f; /* about band, hero card */
+  --color-olive-dark: #4f4f30;
+  --color-line: rgb(29 26 22 / 0.18); /* thin borders */
+  --color-rust-light: #e07a48;
+
+  /* Typography */
+  --font-display: "Archivo", "Arial Narrow", sans-serif;
+  --font-retro: "Righteous", "Arial Black", sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --font-script: "Mrs Saint Delafield", cursive;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+
+  /* Shape and spacing */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --radius-pill: 999px;
+  --container: 1240px;
+  --gutter: clamp(1rem, 3vw, 2rem);
+  --space-section: clamp(3rem, 6vw, 5rem);
+}

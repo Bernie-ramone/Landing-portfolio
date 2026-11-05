@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.rule {
+  flex: 1;
+  height: 1px;
+  background: var(--color-rust);
+  opacity: 0.5;
+}

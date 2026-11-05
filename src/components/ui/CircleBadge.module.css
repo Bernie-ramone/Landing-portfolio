@@ -1,0 +1,28 @@
+.badge {
+  color: var(--color-rust);
+}
+
+.text {
+  fill: currentColor;
+  font-family: var(--font-body);
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.ring {
+  transform-box: view-box;
+  transform-origin: 50px 50px;
+  animation: spin 24s linear infinite;
+}
+
+.star {
+  color: var(--color-ink);
+}
+
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}

@@ -1,0 +1,128 @@
+.hero {
+  padding-block: clamp(2rem, 5vw, 4rem) var(--space-section);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: clamp(2rem, 4vw, 4rem);
+}
+
+/* ---------- Headline ---------- */
+.title {
+  margin: 1.5rem 0 1.25rem;
+  font-family: var(--font-display);
+  font-stretch: 78%;
+  font-weight: 800;
+  font-size: clamp(2.6rem, 7.5vw, 5.75rem);
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  font-size: clamp(2.4rem, 6vw, 5rem);
+}
+
+.line {
+  display: block;
+}
+
+.accent {
+  font-family: var(--font-retro);
+  font-weight: 400;
+  font-stretch: normal;
+  letter-spacing: 0.01em;
+  color: var(--color-rust);
+}
+
+.lead {
+  max-width: 40ch;
+  margin-bottom: 2rem;
+  font-size: var(--text-lg);
+  color: var(--color-ink-soft);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ---------- Trusted by ---------- */
+.trusted {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.6rem 1.25rem 0.6rem 0.75rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-paper);
+}
+
+.avatars {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.avatars img {
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--color-paper);
+  border-radius: 50%;
+  object-fit: cover;
+  filter: grayscale(1) sepia(0.35);
+}
+
+.avatars img + img {
+  margin-left: -10px;
+}
+
+.trustedText {
+  max-width: 22ch;
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.divider {
+  align-self: stretch;
+  width: 1px;
+  background: var(--color-line);
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  color: var(--color-ink-soft);
+}
+
+.logos svg:first-child {
+  width: 28px;
+  height: 28px;
+}
+
+.logos svg:last-child {
+  width: 52px;
+  height: 26px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .trusted {
+    flex-wrap: wrap;
+  }
+
+  .divider {
+    display: none;
+  }
+}
